@@ -1,0 +1,31 @@
+    1  reboot now
+    2  clear
+    3  yum update -y
+    4  yum install java-1.8.0-openjdk -y
+    5  java -version
+    6  yum install wget -y
+    7  wget http://apachemirror.wuchna.com/kafka/2.4.0/kafka_2.12-2.4.0.tgz
+    8  tar -xvzf kafka_2.12-2.4.0.tgz
+    9  rm -rvf kafka_2.12-2.4.0.tgz
+   10  mv kafka_2.12-2.4.0/ kafka
+   11  vi /root/kafka/config/server.properties 
+   12  ls /home/centos/
+   13  mv /home/centos/rc.local /etc/rc.d/rc.local 
+   14  ls /home/centos/
+   15  vi /etc/rc.d/rc.local 
+   16  chmod +x /etc/rc.d/rc.local 
+   17  mv /home/centos/server.properties /root/kafka/config/server.properties 
+   18  clear
+   19  vi /root/kafka/config/server.properties 
+   20  /root/kafka/bin/kafka-server-start.sh /root/kafka/config/server.properties 
+   21  systemctl enable rc-local
+   22  systemctl start rc-local
+   23  systemctl status rc-local
+   24  systemctl enable rc-local
+   25  reboot now
+   26  clear
+   27  /root/kafka/bin/kafka-topics.sh --zookeeper 172.31.45.42:2181  --describe --topic karthick
+   28* 
+   29  /root/kafka/bin/kafka-console-producer.sh --broker-list 172.31.38.50:9092 --topic karthick
+   30  history 
+   31  history > node2.txt

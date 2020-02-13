@@ -1,0 +1,49 @@
+    1  cd kafka/
+    2  ls
+    3  cd config/
+    4  exit
+    5  yum update -y
+    6  yum install java-1.8.0-openjdk -y
+    7  java -version
+    8  yum install wget -y
+    9  wget http://apachemirror.wuchna.com/kafka/2.4.0/kafka_2.12-2.4.0.tgz
+   10  tar -xvzf kafka_2.12-2.4.0.tgz
+   11  rm -rvf kafka_2.12-2.4.0.tgz
+   12  mv kafka_2.12-2.4.0/ kafka
+   13  vi /etc/rc.d/rc.local 
+   14  vi /root/kafka/config/server.properties 
+   15  /root/kafka/bin/kafka-server-start.sh /root/kafka/config/server.properties 
+   16  reboot now
+   17  mv /home/centos/server.properties kafka/config/server.properties
+   18  vi /etc/rc.d/rc.local 
+   19  vi kafka/config/server.properties 
+   20  /root/kafka/bin/kafka-server-start.sh /root/kafka/config/server.properties 
+   21  mv /home/centos/rc.local /etc/rc.d/rc.local 
+   22  vi /etc/rc.d/rc.local 
+   23  chmod +x /etc/rc.d/rc.local 
+   24  systemctl start rc-local
+   25  systemctl enable rc-local
+   26  mv /home/centos/server.properties /root/kafka/config/server.properties 
+   27  vi /root/kafka/config/server.properties 
+   28  /root/kafka/bin/kafka-server-start.sh /root/kafka/config/server.properties 
+   29  rm -RVF /tmp/kafka-logs/
+   30  rm -rvf /tmp/kafka-logs/
+   31  /root/kafka/bin/kafka-server-start.sh /root/kafka/config/server.properties 
+   32  mv /home/centos/rc.local /etc/rc.d/rc.local 
+   33  vi /etc/rc.d/rc.local 
+   34  ls
+   35  chmod +x /etc/rc.d/rc.local 
+   36  systemctl start rc-local
+   37  systemctl enable rc-local
+   38  mv /home/centos/server.properties /root/kafka/config/server.properties 
+   39  vi /root/kafka/config/server.properties 
+   40  rm -rvf /tmp/kafka-logs/
+   41  /root/kafka/bin/kafka-server-start.sh /root/kafka/config/server.properties 
+   42  reboot now
+   43  clear
+   44  cd kafka/
+   45  clear
+   46  vi config/server.properties 
+   47  exit
+   48  history 
+   49  history > node3.txt

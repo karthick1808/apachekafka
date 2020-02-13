@@ -1,0 +1,43 @@
+    1  clear
+    2  yum update -y
+    3  yum install java-1.8.0-openjdk -y
+    4  java -version
+    5  yum install wget -y
+    6  wget http://apachemirror.wuchna.com/kafka/2.4.0/kafka_2.12-2.4.0.tgz
+    7  tar -xvzf kafka_2.12-2.4.0.tgz
+    8  rm -rvf kafka_2.12-2.4.0.tgz
+    9  mv kafka_2.12-2.4.0/ kafka
+   10  cd kafka/
+   11  ls
+   12  vi config/server.properties 
+   13  ls /home/centos/
+   14  exit
+   15  mv /home/centos/rc.local /etc/rc.d/rc.local 
+   16  vi /etc/rc.d/rc.local 
+   17  chmod +x /etc/rc.d/rc.local 
+   18  mv /home/centos/server.properties /root/kafka/config/server.properties 
+   19  clear
+   20  vi kafka/config/server.properties 
+   21  /root/kafka/bin/kafka-server-start.sh /root/kafka/config/server.properties 
+   22  systemctl start rc-local
+   23  systemctl enable rc-local
+   24  reboot now
+   25  cd kafka/
+   26  cd bin/
+   27  ls
+   28  chmod +x .
+   29  clear
+   30  ls
+   31  cd
+   32  clar
+   33  clear
+   34  /root/kafka/bin/kafka-topics.sh 
+   35  /root/kafka/bin/kafka-topics.sh --zookeeper 172.31.45.42:2181 --create --topic karthick
+   36  /root/kafka/bin/kafka-topics.sh --zookeeper 172.31.45.42:2181 --create --topic karthick --partitions 3
+   37  /root/kafka/bin/kafka-topics.sh --zookeeper 172.31.45.42:2181 --create --topic karthick --partitions 3 --replication-factor 2
+   38   /root/kafka/bin/kafka-topics.sh --zookeeper 172.31.45.42:2181 --list
+   39   /root/kafka/bin/kafka-topics.sh --zookeeper 172.31.45.42:2181 --describe --topic karthick
+   40  /root/kafka/bin/kafka-console-consumer.sh 172.31.40.113:9092 --topic karthick
+   41  /root/kafka/bin/kafka-console-consumer.sh --bootstrap-server 172.31.40.113:9092 --topic karthick
+   42  /root/kafka/bin/kafka-console-consumer.sh --bootstrap-server 172.31.40.113:9092 --topic karthick --from-beginning
+   43  history > node1.txt
